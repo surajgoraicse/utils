@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/surajgoraicse/utils"
+	"github.com/surajgoraicse/utils/mathutils"
 )
 
 func TestIsEven(t *testing.T) {
@@ -86,4 +87,21 @@ func TestParseInt(t *testing.T) {
 		})
 
 	}
+}
+
+func TestAdd(t *testing.T) {
+	got := mathutils.Add(1, 2)
+	want := 3
+	if got != want {
+		t.Errorf("got %d want %d", got, want)
+	}
+
+}
+func TestSub(t *testing.T) {
+	got := mathutils.Sub(1, 2)
+	want := -1
+	if got != want {
+		t.Errorf("got %d want %d", got, want)
+	}
+
 }
