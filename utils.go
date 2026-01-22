@@ -18,3 +18,6 @@ func HashString(s string) string {
 	str := hex.EncodeToString(bs)
 	return str
 }
+func IsTrue(v bool) bool {
+	return v
+}

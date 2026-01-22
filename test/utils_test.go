@@ -37,3 +37,16 @@ func TestHashString(t *testing.T) {
 	}
 
 }
+
+func TestIsTrue(t *testing.T) {
+	got := utils.IsTrue(true)
+	want := true
+	if got != want {
+		t.Errorf("got %t want %t", got, want)
+	}
+	got = utils.IsTrue(false)
+	want = false
+	if got != want {
+		t.Errorf("got %t want %t", got, want)
+	}
+}
