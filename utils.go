@@ -3,6 +3,7 @@ package utils
 import (
 	"crypto/sha256"
 	"encoding/hex"
+	"strconv"
 )
 
 func IsEven(num int) bool {
@@ -20,4 +21,12 @@ func HashString(s string) string {
 }
 func IsTrue(v bool) bool {
 	return v
+}
+func ParseInt(s string) (int, error) {
+	v, err := strconv.ParseInt(s, 10, 0)
+	if err != nil {
+		return 0, err
+	}
+	return int(v), nil
+
 }

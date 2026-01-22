@@ -50,3 +50,40 @@ func TestIsTrue(t *testing.T) {
 		t.Errorf("got %t want %t", got, want)
 	}
 }
+
+func TestParseInt(t *testing.T) {
+	testCases := []struct {
+		name   string
+		input  string
+		output int
+	}{
+		{
+			name:   "positive number",
+			input:  "1231243432443",
+			output: 1231243432443,
+		},
+		{
+			name:   "negative number",
+			input:  "-234324234",
+			output: -234324234,
+		},
+		{
+			name:   "test zero",
+			input:  "0",
+			output: 0,
+		},
+	}
+	for _, test := range testCases {
+		t.Run(test.name, func(t *testing.T) {
+			got, err := utils.ParseInt(test.input)
+			if err != nil {
+				t.Errorf("got error %s", err)
+			}
+			if got != test.output {
+				t.Errorf("got %d want %d", got, test.output)
+			}
+
+		})
+
+	}
+}
